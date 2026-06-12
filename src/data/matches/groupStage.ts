@@ -19,4 +19,22 @@ export const GROUP_STAGE_MATCHES: MatchConfig[] = [
     t2: 'República Checa',
     fecha: 'Jueves 11 de junio de 2026',
   },
+  {
+    id: 'match3',
+    label: 'Canadá vs Bosnia - viernes 12 de junio de 2026',
+    stage: 'fase_grupos',
+    type: 'match',
+    t1: 'Canadá',
+    t2: 'Bosnia',
+    fecha: 'Viernes 12 de junio de 2026',
+  },
+  {
+    id: 'match4',
+    label: 'Estados Unidos vs Paraguay - viernes 12 de junio de 2026',
+    stage: 'fase_grupos',
+    type: 'match',
+    t1: 'Estados Unidos',
+    t2: 'Paraguay',
+    fecha: 'Viernes 12 de junio de 2026',
+  },
 ]
