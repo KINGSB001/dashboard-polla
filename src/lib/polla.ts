@@ -1,35 +1,63 @@
-import { POINT_RULES } from '../config/pollaConfig'
+import { BONUS_POINT_RULES, MATCH_POINT_RULES } from '../config/pollaConfig'
 import type {
+  BonusKey,
   BonusResults,
   LeaderboardEntry,
+  MatchStage,
+  MatchPrediction,
   MatchScore,
+  MatchResults,
   Participant,
   ScoreItem,
-  MatchResults,
 } from '../types/polla'
 
-export function calculatePoints(
-  predT1: number,
-  predT2: number,
-  realT1: MatchScore['t1'],
-  realT2: MatchScore['t2'],
-) {
-  if (realT1 === '' || realT2 === '') {
-    return 0
-  }
+function normalizeText(value: string) {
+  return value
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .toLowerCase()
+}
 
-  const rT1 = Number(realT1)
-  const rT2 = Number(realT2)
+function isMatchResolved(
+  result: MatchScore | undefined,
+): result is {
+  t1: number
+  t2: number
+} {
+  return typeof result?.t1 === 'number' && typeof result.t2 === 'number'
+}
+
+function isBonusResolved(result: string | undefined) {
+  return Boolean(result && result.trim())
+}
+
+function getStageRule(stage: MatchStage) {
+  return stage === 'fase_eliminatoria'
+    ? MATCH_POINT_RULES.fase_eliminatoria
+    : MATCH_POINT_RULES.fase_grupos
+}
+
+export function calculateMatchPoints(
+  prediction: MatchPrediction,
+  result: MatchScore,
+  stage: MatchStage,
+) {
+  const rules = getStageRule(stage)
+
+  const rT1 = Number(result.t1)
+  const rT2 = Number(result.t2)
 
   if (Number.isNaN(rT1) || Number.isNaN(rT2)) {
     return 0
   }
 
-  if (predT1 === rT1 && predT2 === rT2) {
-    return POINT_RULES.marcadorExacto
+  if (prediction.t1 === rT1 && prediction.t2 === rT2) {
+    return rules.marcadorExacto
   }
 
-  const predDiff = predT1 - predT2
+  const predDiff = prediction.t1 - prediction.t2
   const realDiff = rT1 - rT2
 
   if (
@@ -37,20 +65,47 @@ export function calculatePoints(
     (predDiff < 0 && realDiff < 0) ||
     (predDiff === 0 && realDiff === 0)
   ) {
-    return POINT_RULES.resultadoAcertado
+    return rules.resultadoAcertado
   }
 
   return 0
 }
 
-export function calculateBonusPoints(prediction: string | undefined, result: string | undefined) {
-  if (!prediction || !result) {
+function calculateBonusPoints(
+  key: BonusKey,
+  prediction: string | undefined,
+  result: string | undefined,
+) {
+  const points = BONUS_POINT_RULES[key] ?? 0
+
+  if (!prediction || !result || points === 0) {
     return 0
   }
 
-  return prediction.trim().toLowerCase() === result.trim().toLowerCase()
-    ? POINT_RULES.bonoCorrecto
-    : 0
+  return normalizeText(prediction) === normalizeText(result) ? points : 0
+}
+
+export function getScoreItemResultLabel(
+  item: ScoreItem | null,
+  matchResults: MatchResults,
+  bonusResults: BonusResults,
+) {
+  if (!item) {
+    return 'Sin elemento seleccionado'
+  }
+
+  if (item.type === 'match') {
+    const result = matchResults[item.id]
+
+    if (!isMatchResolved(result)) {
+      return 'Pendiente'
+    }
+
+    return `${item.t1} ${result.t1} - ${result.t2} ${item.t2}`
+  }
+
+  const result = bonusResults[item.key]
+  return isBonusResolved(result) ? result ?? '' : 'Pendiente'
 }
 
 export function buildLeaderboard(
@@ -63,17 +118,34 @@ export function buildLeaderboard(
   return participants
     .map<LeaderboardEntry>((user) => {
       let totalPoints = 0
-      let selectedItemPoints = 0
+      let selectedItemPoints: number | null = null
+      let exactHits = 0
+      let outcomeHits = 0
+      let championHit = false
+      let subchampionHit = false
+      let goleadorHit = false
 
       items.forEach((item) => {
         if (item.type === 'match') {
           const prediction = user.predicciones.partidos[item.id]
           const result = matchResults[item.id]
-          const points = prediction
-            ? calculatePoints(prediction.t1, prediction.t2, result?.t1 ?? '', result?.t2 ?? '')
-            : 0
+
+          if (!isMatchResolved(result)) {
+            if (item.id === selectedItemId) {
+              selectedItemPoints = null
+            }
+
+            return
+          }
+
+          const points = prediction ? calculateMatchPoints(prediction, result, item.stage) : 0
 
           totalPoints += points
+          exactHits += points === getStageRule(item.stage).marcadorExacto ? 1 : 0
+          outcomeHits +=
+            points === getStageRule(item.stage).resultadoAcertado
+              ? 1
+              : 0
 
           if (item.id === selectedItemId) {
             selectedItemPoints = points
@@ -82,12 +154,20 @@ export function buildLeaderboard(
           return
         }
 
-        const points = calculateBonusPoints(
-          user.predicciones.bonos[item.key],
-          bonusResults[item.key],
-        )
+        if (!isBonusResolved(bonusResults[item.key])) {
+          if (item.id === selectedItemId) {
+            selectedItemPoints = null
+          }
+
+          return
+        }
+
+        const points = calculateBonusPoints(item.key, user.predicciones.bonos[item.key], bonusResults[item.key])
 
         totalPoints += points
+        championHit ||= item.key === 'campeon' && points > 0
+        subchampionHit ||= item.key === 'subcampeon' && points > 0
+        goleadorHit ||= item.key === 'goleador' && points > 0
 
         if (item.id === selectedItemId) {
           selectedItemPoints = points
@@ -98,7 +178,21 @@ export function buildLeaderboard(
         ...user,
         totalPoints,
         selectedItemPoints,
+        exactHits,
+        outcomeHits,
+        championHit,
+        subchampionHit,
+        goleadorHit,
       }
     })
-    .sort((a, b) => b.totalPoints - a.totalPoints || a.nombre.localeCompare(b.nombre, 'es'))
+    .sort(
+      (a, b) =>
+        b.totalPoints - a.totalPoints ||
+        b.exactHits - a.exactHits ||
+        b.outcomeHits - a.outcomeHits ||
+        Number(b.championHit) - Number(a.championHit) ||
+        Number(b.subchampionHit) - Number(a.subchampionHit) ||
+        Number(b.goleadorHit) - Number(a.goleadorHit) ||
+        a.nombre.localeCompare(b.nombre, 'es'),
+    )
 }

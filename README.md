@@ -27,6 +27,7 @@ pnpm run deploy
 - Resultados reales: `src/data/results`
 - Participantes: `src/data/participants`
 - Guía de actualización: `docs/ACTUALIZAR_POLLADATA.md`
+- Fuentes actuales: `FORMULARIOS/F1.xlsx` y `FORMULARIOS/MUNDIAL2026 REGLAS.pdf`
 - Insumos futuros: `insumos`
 
 ## Cómo quedó organizado

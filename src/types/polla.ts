@@ -7,7 +7,8 @@ export type BonusKey =
   | 'eq_goleador'
   | 'valla_vencida'
 
-export type StageFilter = 'fase_grupos' | 'fase_eliminatoria' | 'bonos'
+export type StageFilter = 'general' | 'fase_grupos' | 'fase_eliminatoria' | 'bonos'
+export type MatchStage = Exclude<StageFilter, 'general' | 'bonos'>
 
 export type MatchId = string
 
@@ -40,7 +41,7 @@ export type Participant = {
 export type MatchConfig = {
   id: MatchId
   label: string
-  stage: Exclude<StageFilter, 'bonos'>
+  stage: MatchStage
   type: 'match'
   t1: string
   t2: string
@@ -63,5 +64,10 @@ export type BonusResults = Partial<Record<BonusKey, string>>
 
 export type LeaderboardEntry = Participant & {
   totalPoints: number
-  selectedItemPoints: number
+  selectedItemPoints: number | null
+  exactHits: number
+  outcomeHits: number
+  championHit: boolean
+  subchampionHit: boolean
+  goleadorHit: boolean
 }

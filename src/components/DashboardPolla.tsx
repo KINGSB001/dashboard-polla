@@ -5,36 +5,42 @@ import { DASHBOARD_META } from '../config/pollaConfig'
 import { STAGE_FILTERS } from '../config/pollaConfig'
 import { BONUS_RESULTS, PARTICIPANTS, SCORE_ITEMS } from '../data'
 import { MATCH_RESULTS } from '../data'
-import { buildLeaderboard } from '../lib/polla'
+import { buildLeaderboard, getScoreItemResultLabel } from '../lib/polla'
 import type { ScoreItem, StageFilter } from '../types/polla'
 import { FilterPanel } from './FilterPanel'
 import { LeaderboardTable } from './LeaderboardTable'
 
-const DEFAULT_STAGE: StageFilter = 'fase_grupos'
-
-function getInitialMatchId() {
-  return SCORE_ITEMS.find((match) => match.stage === DEFAULT_STAGE)?.id ?? ''
-}
+const DEFAULT_STAGE: StageFilter = 'general'
 
 export default function DashboardPolla() {
   const [selectedStage, setSelectedStage] = useState<StageFilter>(DEFAULT_STAGE)
-  const [selectedMatchId, setSelectedMatchId] = useState<ScoreItem['id'] | ''>(getInitialMatchId())
+  const [selectedMatchId, setSelectedMatchId] = useState<ScoreItem['id'] | ''>('')
 
   const filteredMatches = useMemo(
-    () => SCORE_ITEMS.filter((match) => match.stage === selectedStage),
+    () => (selectedStage === 'general' ? [] : SCORE_ITEMS.filter((match) => match.stage === selectedStage)),
     [selectedStage],
   )
 
-  const activeMatchId = filteredMatches.some((match) => match.id === selectedMatchId)
-    ? selectedMatchId
-    : filteredMatches[0]?.id ?? ''
+  const activeMatchId =
+    selectedStage === 'general'
+      ? ''
+      : filteredMatches.some((match) => match.id === selectedMatchId)
+        ? selectedMatchId
+        : filteredMatches[0]?.id ?? ''
 
   const selectedMatch =
-    filteredMatches.find((match) => match.id === activeMatchId) ?? filteredMatches[0] ?? null
+    selectedStage === 'general'
+      ? null
+      : filteredMatches.find((match) => match.id === activeMatchId) ?? filteredMatches[0] ?? null
 
   const leaderboard = useMemo(
     () => buildLeaderboard(PARTICIPANTS, SCORE_ITEMS, MATCH_RESULTS, BONUS_RESULTS, activeMatchId),
     [activeMatchId],
+  )
+
+  const selectedMatchResultLabel = useMemo(
+    () => getScoreItemResultLabel(selectedMatch, MATCH_RESULTS, BONUS_RESULTS),
+    [selectedMatch],
   )
 
   return (
@@ -73,6 +79,13 @@ export default function DashboardPolla() {
 
           <LeaderboardTable leaderboard={leaderboard} selectedMatch={selectedMatch} />
         </div>
+
+        {selectedMatch && (
+          <p className="text-center text-sm text-slate-500">
+            Resultado oficial del elemento seleccionado:{' '}
+            <span className="font-semibold text-slate-700">{selectedMatchResultLabel}</span>
+          </p>
+        )}
       </div>
     </div>
   )
