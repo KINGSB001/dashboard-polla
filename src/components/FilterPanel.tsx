@@ -1,13 +1,14 @@
 import { Activity, ChevronDown } from 'lucide-react'
 
-import type { MatchConfig, StageFilter } from '../types/polla'
+import { POINT_RULES } from '../config/pollaConfig'
+import type { ScoreItem, StageFilter } from '../types/polla'
 
 type FilterPanelProps = {
-  filteredMatches: MatchConfig[]
-  selectedMatchId: MatchConfig['id'] | ''
+  filteredMatches: ScoreItem[]
+  selectedMatchId: ScoreItem['id'] | ''
   selectedStage: StageFilter
   stageFilters: { id: StageFilter; label: string }[]
-  onMatchChange: (value: MatchConfig['id']) => void
+  onMatchChange: (value: ScoreItem['id']) => void
   onStageChange: (value: StageFilter) => void
 }
 
@@ -60,7 +61,7 @@ export function FilterPanel({
                 className="w-full appearance-none rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 pr-10 text-slate-700 transition-colors focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:text-slate-400"
                 value={selectedMatchId}
                 disabled={filteredMatches.length === 0}
-                onChange={(event) => onMatchChange(event.target.value as MatchConfig['id'])}
+                onChange={(event) => onMatchChange(event.target.value as ScoreItem['id'])}
               >
                 {filteredMatches.length === 0 ? (
                   <option value="">Sin elementos cargados</option>
@@ -87,13 +88,16 @@ export function FilterPanel({
 
         <ul className="space-y-1 text-xs text-blue-700">
           <li>
-            • <strong>3 puntos:</strong> acertar el marcador exacto.
+            • <strong>{POINT_RULES.marcadorExacto} puntos:</strong> acertar el marcador exacto.
           </li>
           <li>
-            • <strong>1 punto:</strong> acertar el ganador o si es empate.
+            • <strong>{POINT_RULES.resultadoAcertado} punto:</strong> acertar el ganador o si es empate.
           </li>
           <li>
-            • <strong>0 puntos:</strong> ninguna de las anteriores.
+            • <strong>{POINT_RULES.bonoCorrecto} puntos:</strong> acertar un bono cuando ya tenga resultado.
+          </li>
+          <li>
+            • <strong>0 puntos:</strong> ninguna de las anteriores o resultados aún vacíos.
           </li>
         </ul>
       </div>

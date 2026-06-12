@@ -1,8 +1,8 @@
-import type { LeaderboardEntry, MatchConfig } from '../types/polla'
+import type { LeaderboardEntry, ScoreItem } from '../types/polla'
 
 type LeaderboardTableProps = {
   leaderboard: LeaderboardEntry[]
-  selectedMatch: MatchConfig | null
+  selectedMatch: ScoreItem | null
 }
 
 function getRankBadgeClass(index: number) {
@@ -21,23 +21,26 @@ function getRankBadgeClass(index: number) {
   return 'bg-blue-100 text-blue-700'
 }
 
-function renderPrediction(user: LeaderboardEntry, selectedMatch: MatchConfig) {
+function renderPrediction(user: LeaderboardEntry, selectedMatch: ScoreItem) {
   if (selectedMatch.type === 'match') {
-    const pred1 = user.predicciones[selectedMatch.t1]
-    const pred2 = user.predicciones[selectedMatch.t2]
+    const prediction = user.predicciones.partidos[selectedMatch.id]
+
+    if (!prediction) {
+      return <span className="text-sm text-slate-400">Sin predicción</span>
+    }
 
     return (
       <div className="inline-flex items-center justify-center rounded-lg border border-slate-200 bg-slate-100 px-3 py-1.5 transition-colors group-hover:border-slate-300">
-        <span className="font-bold text-slate-700">{pred1}</span>
+        <span className="font-bold text-slate-700">{prediction.t1}</span>
         <span className="mx-2 text-xs text-slate-400">-</span>
-        <span className="font-bold text-slate-700">{pred2}</span>
+        <span className="font-bold text-slate-700">{prediction.t2}</span>
       </div>
     )
   }
 
   return (
     <span className="rounded-lg border border-slate-200 bg-slate-100 px-3 py-1.5 font-semibold text-slate-700 transition-colors group-hover:border-slate-300">
-      {user.predicciones[selectedMatch.key] || '-'}
+      {user.predicciones.bonos[selectedMatch.key] || '-'}
     </span>
   )
 }
@@ -71,8 +74,8 @@ export function LeaderboardTable({ leaderboard, selectedMatch }: LeaderboardTabl
 
             <tbody className="divide-y divide-slate-100">
               {leaderboard.map((user, index) => {
-                const isPerfectMatch = user.selectedMatchPoints === 3
-                const isPartialMatch = user.selectedMatchPoints === 1
+                const isPerfectMatch = user.selectedItemPoints >= 3
+                const isPartialMatch = user.selectedItemPoints > 0 && user.selectedItemPoints < 3
 
                 return (
                   <tr key={user.id} className="group transition-colors hover:bg-slate-50/50">
@@ -103,7 +106,7 @@ export function LeaderboardTable({ leaderboard, selectedMatch }: LeaderboardTabl
                               : 'bg-slate-100 text-slate-500'
                         }`}
                       >
-                        {selectedMatch.type === 'match' ? user.selectedMatchPoints : '-'}
+                        {user.selectedItemPoints || '-'}
                       </span>
                     </td>
 

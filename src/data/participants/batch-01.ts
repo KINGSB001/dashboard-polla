@@ -1,0 +1,104 @@
+import type { Participant } from '../../types/polla'
+
+export const PARTICIPANTS_BATCH_01: Participant[] = [
+  {
+    id: 1,
+    nombre: 'Sebastian',
+    correo: 'Sbbastian0@gmail.com',
+    predicciones: {
+      partidos: {
+        match1: { t1: 2, t2: 1 },
+        match2: { t1: 1, t2: 1 },
+      },
+      bonos: {
+        campeon: 'España',
+        subcampeon: 'Francia',
+        tercer: 'Argentina',
+        cuarto: 'Portugal',
+        goleador: 'Kylian Mbappé',
+        eq_goleador: 'Francia',
+        valla_vencida: 'Curazao',
+      },
+    },
+  },
+  {
+    id: 2,
+    nombre: 'Josue David Barreto Blandon',
+    correo: 'jbarreto3650@gmail.com',
+    predicciones: {
+      partidos: {
+        match1: { t1: 2, t2: 0 },
+        match2: { t1: 2, t2: 0 },
+      },
+      bonos: {
+        campeon: 'Francia',
+        subcampeon: 'España',
+        tercer: 'Argentina',
+        cuarto: 'Inglaterra',
+        goleador: 'Michael Olise',
+        eq_goleador: 'Francia',
+        valla_vencida: 'Curazao',
+      },
+    },
+  },
+  {
+    id: 3,
+    nombre: 'José Daniel Suárez',
+    correo: 'dani.suarez9207@gmail.com',
+    predicciones: {
+      partidos: {
+        match1: { t1: 2, t2: 1 },
+        match2: { t1: 1, t2: 3 },
+      },
+      bonos: {
+        campeon: 'Argentina',
+        subcampeon: 'España',
+        tercer: 'Francia',
+        cuarto: 'Portugal',
+        goleador: 'Kylian Mbappé',
+        eq_goleador: 'España',
+        valla_vencida: 'España',
+      },
+    },
+  },
+  {
+    id: 4,
+    nombre: 'German Barreto',
+    correo: 'German.barreto.produce@gmail.com',
+    predicciones: {
+      partidos: {
+        match1: { t1: 3, t2: 1 },
+        match2: { t1: 1, t2: 1 },
+      },
+      bonos: {
+        campeon: 'España',
+        subcampeon: 'Brasil',
+        tercer: 'Inglaterra',
+        cuarto: 'Países Bajos',
+        goleador: 'Lionel Messi',
+        eq_goleador: 'España',
+        valla_vencida: 'Haití',
+      },
+    },
+  },
+  {
+    id: 5,
+    nombre: 'Omar Barreto',
+    correo: 'omar.barreto.oebp@gmail.com',
+    predicciones: {
+      partidos: {
+        match1: { t1: 2, t2: 0 },
+        match2: { t1: 1, t2: 1 },
+      },
+      bonos: {
+        campeon: 'España',
+        subcampeon: 'Inglaterra',
+        tercer: 'Colombia',
+        cuarto: 'Francia',
+        goleador: 'Harry Kane',
+        eq_goleador: 'España',
+        valla_vencida: 'Panamá',
+      },
+    },
+  },
+]

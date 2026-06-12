@@ -1,24 +1,27 @@
 import { Trophy, Users } from 'lucide-react'
 import { useMemo, useState } from 'react'
 
-import { INITIAL_DATA, MATCHES, REAL_SCORES, STAGE_FILTERS } from '../data/pollaData'
+import { DASHBOARD_META } from '../config/pollaConfig'
+import { STAGE_FILTERS } from '../config/pollaConfig'
+import { BONUS_RESULTS, PARTICIPANTS, SCORE_ITEMS } from '../data'
+import { MATCH_RESULTS } from '../data'
 import { buildLeaderboard } from '../lib/polla'
-import type { MatchConfig, StageFilter } from '../types/polla'
+import type { ScoreItem, StageFilter } from '../types/polla'
 import { FilterPanel } from './FilterPanel'
 import { LeaderboardTable } from './LeaderboardTable'
 
 const DEFAULT_STAGE: StageFilter = 'fase_grupos'
 
 function getInitialMatchId() {
-  return MATCHES.find((match) => match.stage === DEFAULT_STAGE)?.id ?? ''
+  return SCORE_ITEMS.find((match) => match.stage === DEFAULT_STAGE)?.id ?? ''
 }
 
 export default function DashboardPolla() {
   const [selectedStage, setSelectedStage] = useState<StageFilter>(DEFAULT_STAGE)
-  const [selectedMatchId, setSelectedMatchId] = useState<MatchConfig['id'] | ''>(getInitialMatchId())
+  const [selectedMatchId, setSelectedMatchId] = useState<ScoreItem['id'] | ''>(getInitialMatchId())
 
   const filteredMatches = useMemo(
-    () => MATCHES.filter((match) => match.stage === selectedStage),
+    () => SCORE_ITEMS.filter((match) => match.stage === selectedStage),
     [selectedStage],
   )
 
@@ -30,7 +33,7 @@ export default function DashboardPolla() {
     filteredMatches.find((match) => match.id === activeMatchId) ?? filteredMatches[0] ?? null
 
   const leaderboard = useMemo(
-    () => buildLeaderboard(INITIAL_DATA, MATCHES, REAL_SCORES, activeMatchId),
+    () => buildLeaderboard(PARTICIPANTS, SCORE_ITEMS, MATCH_RESULTS, BONUS_RESULTS, activeMatchId),
     [activeMatchId],
   )
 
@@ -44,14 +47,17 @@ export default function DashboardPolla() {
             </div>
 
             <div>
-              <h1 className="text-2xl font-bold md:text-3xl">Polla Mundialista 2026</h1>
-              <p className="mt-1 text-sm text-blue-200">Dashboard de predicciones y puntajes</p>
+              <h1 className="text-2xl font-bold md:text-3xl">{DASHBOARD_META.titulo}</h1>
+              <p className="mt-1 text-sm text-blue-200">{DASHBOARD_META.subtitulo}</p>
+              <p className="mt-1 text-xs text-blue-300">
+                Última actualización base: {DASHBOARD_META.ultimaActualizacion}
+              </p>
             </div>
           </div>
 
           <div className="flex items-center gap-2 rounded-lg bg-blue-800 px-4 py-2">
             <Users size={20} className="text-blue-300" />
-            <span className="font-semibold">{INITIAL_DATA.length} Participantes</span>
+            <span className="font-semibold">{PARTICIPANTS.length} Participantes</span>
           </div>
         </header>
 

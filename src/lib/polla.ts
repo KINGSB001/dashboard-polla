@@ -1,4 +1,12 @@
-import type { LeaderboardEntry, MatchConfig, MatchScore, Participant, RealScores } from '../types/polla'
+import { POINT_RULES } from '../config/pollaConfig'
+import type {
+  BonusResults,
+  LeaderboardEntry,
+  MatchScore,
+  Participant,
+  ScoreItem,
+  MatchResults,
+} from '../types/polla'
 
 export function calculatePoints(
   predT1: number,
@@ -18,7 +26,7 @@ export function calculatePoints(
   }
 
   if (predT1 === rT1 && predT2 === rT2) {
-    return 3
+    return POINT_RULES.marcadorExacto
   }
 
   const predDiff = predT1 - predT2
@@ -29,46 +37,67 @@ export function calculatePoints(
     (predDiff < 0 && realDiff < 0) ||
     (predDiff === 0 && realDiff === 0)
   ) {
-    return 1
+    return POINT_RULES.resultadoAcertado
   }
 
   return 0
 }
 
+export function calculateBonusPoints(prediction: string | undefined, result: string | undefined) {
+  if (!prediction || !result) {
+    return 0
+  }
+
+  return prediction.trim().toLowerCase() === result.trim().toLowerCase()
+    ? POINT_RULES.bonoCorrecto
+    : 0
+}
+
 export function buildLeaderboard(
   participants: Participant[],
-  matches: MatchConfig[],
-  scores: RealScores,
-  selectedMatchId: MatchConfig['id'] | '',
+  items: ScoreItem[],
+  matchResults: MatchResults,
+  bonusResults: BonusResults,
+  selectedItemId: ScoreItem['id'] | '',
 ) {
   return participants
     .map<LeaderboardEntry>((user) => {
       let totalPoints = 0
-      let selectedMatchPoints = 0
+      let selectedItemPoints = 0
 
-      matches.forEach((match) => {
-        if (match.type !== 'match') {
+      items.forEach((item) => {
+        if (item.type === 'match') {
+          const prediction = user.predicciones.partidos[item.id]
+          const result = matchResults[item.id]
+          const points = prediction
+            ? calculatePoints(prediction.t1, prediction.t2, result?.t1 ?? '', result?.t2 ?? '')
+            : 0
+
+          totalPoints += points
+
+          if (item.id === selectedItemId) {
+            selectedItemPoints = points
+          }
+
           return
         }
 
-        const points = calculatePoints(
-          user.predicciones[match.t1],
-          user.predicciones[match.t2],
-          scores[match.id].t1,
-          scores[match.id].t2,
+        const points = calculateBonusPoints(
+          user.predicciones.bonos[item.key],
+          bonusResults[item.key],
         )
 
         totalPoints += points
 
-        if (match.id === selectedMatchId) {
-          selectedMatchPoints = points
+        if (item.id === selectedItemId) {
+          selectedItemPoints = points
         }
       })
 
       return {
         ...user,
         totalPoints,
-        selectedMatchPoints,
+        selectedItemPoints,
       }
     })
     .sort((a, b) => b.totalPoints - a.totalPoints || a.nombre.localeCompare(b.nombre, 'es'))

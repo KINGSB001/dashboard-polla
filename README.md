@@ -1,73 +1,55 @@
-# React + TypeScript + Vite
+# Dashboard Polla Mundialista 2026
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyecto React + Vite para administrar y publicar la polla del mundial.
 
-Currently, two official plugins are available:
+## Ubicación del proyecto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Carpeta principal: `/Volumes/MAC/MAC EXTERNO/Projects/dashboard-polla`
+- Acceso directo: `/Volumes/MAC/MAC EXTERNO/Downloads/dashboard-polla`
 
-## React Compiler
+## Comandos útiles
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+cd "/Volumes/MAC/MAC EXTERNO/Projects/dashboard-polla"
+source ~/.zshrc
+pnpm run dev
+pnpm run build
+git push
+pnpm run deploy
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Dónde vive cada cosa
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- UI principal: `src/components`
+- Tipos: `src/types/polla.ts`
+- Configuración general: `src/config/pollaConfig.ts`
+- Partidos: `src/data/matches`
+- Resultados reales: `src/data/results`
+- Participantes: `src/data/participants`
+- Guía de actualización: `docs/ACTUALIZAR_POLLADATA.md`
+- Insumos futuros: `insumos`
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Cómo quedó organizado
+
+- Las predicciones ahora se guardan por `id` de partido.
+- Los bonos quedaron separados de los partidos.
+- Los participantes se dividieron por bloques para no crecer en un solo archivo.
+- Los resultados reales están aparte para que podamos actualizarlos sin tocar la UI.
+
+## Flujo de actualización
+
+1. Me mandas el archivo Excel, CSV o captura con nuevos datos.
+2. Yo actualizo:
+   - participantes
+   - partidos
+   - resultados
+   - puntos
+3. Probamos con `pnpm run build`.
+4. Si quieres publicarlo, hacemos:
+
+```bash
+git add .
+git commit -m "actualiza polla"
+git push
+pnpm run deploy
 ```
