@@ -9,4 +9,8 @@ export const MATCH_RESULTS: MatchResults = {
   match3: { t1: 1, t2: 1 },
   // Confirmado el 12 de junio de 2026: Estados Unidos 4 - 1 Paraguay.
   match4: { t1: 4, t2: 1 },
+  match5: { t1: '', t2: '' },
+  match6: { t1: '', t2: '' },
+  match7: { t1: '', t2: '' },
+  match8: { t1: '', t2: '' },
 }

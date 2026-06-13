@@ -8,6 +8,7 @@ Dejar claro qué archivo tocar según el tipo de cambio que llegue desde Forms, 
 
 - Respuestas del primer corte: `FORMULARIOS/F1.xlsx`
 - Respuestas del segundo corte: `FORMULARIOS/F2.xlsx`
+- Respuestas del tercer corte: `FORMULARIOS/F3.xlsx`
 - Reglas oficiales: `FORMULARIOS/MUNDIAL2026 REGLAS.pdf`
 
 ## Si cambia un participante o entran nuevos participantes
