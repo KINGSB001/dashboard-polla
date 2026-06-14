@@ -13,6 +13,12 @@ export const MATCH_RESULTS: MatchResults = {
   match5: { t1: 1, t2: 1 },
   // Confirmado el 13 de junio de 2026: Brasil 1 - 1 Marruecos.
   match6: { t1: 1, t2: 1 },
-  match7: { t1: '', t2: '' },
-  match8: { t1: '', t2: '' },
+  // Confirmado el 13 de junio de 2026: Haití 0 - 1 Escocia.
+  match7: { t1: 0, t2: 1 },
+  // Confirmado el 13 de junio de 2026: Australia 2 - 0 Turquía.
+  match8: { t1: 2, t2: 0 },
+  match9: { t1: '', t2: '' },
+  match10: { t1: '', t2: '' },
+  match11: { t1: '', t2: '' },
+  match12: { t1: '', t2: '' },
 }
