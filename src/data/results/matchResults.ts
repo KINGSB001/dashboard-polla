@@ -17,8 +17,10 @@ export const MATCH_RESULTS: MatchResults = {
   match7: { t1: 0, t2: 1 },
   // Confirmado el 13 de junio de 2026: Australia 2 - 0 Turquía.
   match8: { t1: 2, t2: 0 },
-  match9: { t1: '', t2: '' },
-  match10: { t1: '', t2: '' },
+  // Confirmado el 14 de junio de 2026: Alemania 7 - 1 Curazao.
+  match9: { t1: 7, t2: 1 },
+  // Confirmado el 14 de junio de 2026: Países Bajos 2 - 2 Japón.
+  match10: { t1: 2, t2: 2 },
   match11: { t1: '', t2: '' },
   match12: { t1: '', t2: '' },
 }
