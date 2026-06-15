@@ -25,8 +25,10 @@ export const MATCH_RESULTS: MatchResults = {
   match11: { t1: 1, t2: 0 },
   // Confirmado el 14 de junio de 2026: Suecia 5 - 1 Túnez.
   match12: { t1: 5, t2: 1 },
-  match13: { t1: '', t2: '' },
-  match14: { t1: '', t2: '' },
+  // Confirmado el 15 de junio de 2026: España 0 - 0 Cabo Verde.
+  match13: { t1: 0, t2: 0 },
+  // Confirmado el 15 de junio de 2026: Bélgica 1 - 1 Egipto.
+  match14: { t1: 1, t2: 1 },
   match15: { t1: '', t2: '' },
   match16: { t1: '', t2: '' },
 }
