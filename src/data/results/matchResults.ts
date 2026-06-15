@@ -21,6 +21,12 @@ export const MATCH_RESULTS: MatchResults = {
   match9: { t1: 7, t2: 1 },
   // Confirmado el 14 de junio de 2026: Países Bajos 2 - 2 Japón.
   match10: { t1: 2, t2: 2 },
-  match11: { t1: '', t2: '' },
-  match12: { t1: '', t2: '' },
+  // Confirmado el 14 de junio de 2026: Costa de Marfil 1 - 0 Ecuador.
+  match11: { t1: 1, t2: 0 },
+  // Confirmado el 14 de junio de 2026: Suecia 5 - 1 Túnez.
+  match12: { t1: 5, t2: 1 },
+  match13: { t1: '', t2: '' },
+  match14: { t1: '', t2: '' },
+  match15: { t1: '', t2: '' },
+  match16: { t1: '', t2: '' },
 }
