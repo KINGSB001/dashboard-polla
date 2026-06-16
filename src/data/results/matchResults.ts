@@ -33,4 +33,8 @@ export const MATCH_RESULTS: MatchResults = {
   match15: { t1: 1, t2: 1 },
   // Confirmado el 15 de junio de 2026: Irán 2 - 2 Nueva Zelanda.
   match16: { t1: 2, t2: 2 },
+  match17: { t1: '', t2: '' },
+  match18: { t1: '', t2: '' },
+  match19: { t1: '', t2: '' },
+  match20: { t1: '', t2: '' },
 }

@@ -11,6 +11,7 @@ Dejar claro qué archivo tocar según el tipo de cambio que llegue desde Forms, 
 - Respuestas del tercer corte: `FORMULARIOS/F3.xlsx`
 - Respuestas del cuarto corte: `FORMULARIOS/F4.xlsx`
 - Respuestas del quinto corte: `FORMULARIOS/F5.xlsx`
+- Respuestas del sexto corte: `FORMULARIOS/F6.xlsx`
 - Reglas oficiales: `FORMULARIOS/MUNDIAL2026 REGLAS.pdf`
 
 ## Si cambia un participante o entran nuevos participantes
