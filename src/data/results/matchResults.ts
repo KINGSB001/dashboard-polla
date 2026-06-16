@@ -29,6 +29,8 @@ export const MATCH_RESULTS: MatchResults = {
   match13: { t1: 0, t2: 0 },
   // Confirmado el 15 de junio de 2026: Bélgica 1 - 1 Egipto.
   match14: { t1: 1, t2: 1 },
-  match15: { t1: '', t2: '' },
-  match16: { t1: '', t2: '' },
+  // Confirmado el 15 de junio de 2026: Arabia Saudita 1 - 1 Uruguay.
+  match15: { t1: 1, t2: 1 },
+  // Confirmado el 15 de junio de 2026: Irán 1 - 2 Nueva Zelanda.
+  match16: { t1: 1, t2: 2 },
 }
