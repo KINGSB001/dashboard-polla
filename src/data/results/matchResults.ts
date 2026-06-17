@@ -33,8 +33,11 @@ export const MATCH_RESULTS: MatchResults = {
   match15: { t1: 1, t2: 1 },
   // Confirmado el 15 de junio de 2026: Irán 2 - 2 Nueva Zelanda.
   match16: { t1: 2, t2: 2 },
-  match17: { t1: '', t2: '' },
-  match18: { t1: '', t2: '' },
-  match19: { t1: '', t2: '' },
+  // Confirmado el 16 de junio de 2026: Francia 3 - 1 Senegal.
+  match17: { t1: 3, t2: 1 },
+  // Confirmado el 16 de junio de 2026: Irak 1 - 4 Noruega.
+  match18: { t1: 1, t2: 4 },
+  // Confirmado el 16 de junio de 2026: Argentina 3 - 0 Argelia.
+  match19: { t1: 3, t2: 0 },
   match20: { t1: '', t2: '' },
 }
