@@ -39,5 +39,10 @@ export const MATCH_RESULTS: MatchResults = {
   match18: { t1: 1, t2: 4 },
   // Confirmado el 16 de junio de 2026: Argentina 3 - 0 Argelia.
   match19: { t1: 3, t2: 0 },
-  match20: { t1: '', t2: '' },
+  // Confirmado el 16 de junio de 2026: Austria 3 - 1 Jordania.
+  match20: { t1: 3, t2: 1 },
+  match21: { t1: '', t2: '' },
+  match22: { t1: '', t2: '' },
+  match23: { t1: '', t2: '' },
+  match24: { t1: '', t2: '' },
 }
