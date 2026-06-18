@@ -49,8 +49,11 @@ export const MATCH_RESULTS: MatchResults = {
   match23: { t1: 1, t2: 0 },
   // Confirmado el 17 de junio de 2026: Uzbekistán 1 - 3 Colombia.
   match24: { t1: 1, t2: 3 },
-  match25: { t1: '', t2: '' },
-  match26: { t1: '', t2: '' },
-  match27: { t1: '', t2: '' },
+  // Confirmado el 18 de junio de 2026: República Checa 1 - 1 Sudáfrica.
+  match25: { t1: 1, t2: 1 },
+  // Confirmado el 18 de junio de 2026: Suiza 4 - 1 Bosnia.
+  match26: { t1: 4, t2: 1 },
+  // Confirmado el 18 de junio de 2026: Canadá 4 - 0 Qatar.
+  match27: { t1: 4, t2: 0 },
   match28: { t1: '', t2: '' },
 }
