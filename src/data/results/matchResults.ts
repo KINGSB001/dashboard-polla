@@ -41,8 +41,12 @@ export const MATCH_RESULTS: MatchResults = {
   match19: { t1: 3, t2: 0 },
   // Confirmado el 16 de junio de 2026: Austria 3 - 1 Jordania.
   match20: { t1: 3, t2: 1 },
-  match21: { t1: '', t2: '' },
-  match22: { t1: '', t2: '' },
-  match23: { t1: '', t2: '' },
-  match24: { t1: '', t2: '' },
+  // Confirmado el 17 de junio de 2026: Portugal 1 - 1 RD Congo.
+  match21: { t1: 1, t2: 1 },
+  // Confirmado el 17 de junio de 2026: Inglaterra 4 - 2 Croacia.
+  match22: { t1: 4, t2: 2 },
+  // Confirmado el 17 de junio de 2026: Ghana 1 - 0 Panamá.
+  match23: { t1: 1, t2: 0 },
+  // Confirmado el 17 de junio de 2026: Uzbekistán 1 - 3 Colombia.
+  match24: { t1: 1, t2: 3 },
 }
