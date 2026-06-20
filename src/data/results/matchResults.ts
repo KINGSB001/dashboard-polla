@@ -57,8 +57,10 @@ export const MATCH_RESULTS: MatchResults = {
   match27: { t1: 6, t2: 0 },
   // Confirmado el 18 de junio de 2026: México 1 - 0 Corea del Sur.
   match28: { t1: 1, t2: 0 },
-  match29: { t1: '', t2: '' },
-  match30: { t1: '', t2: '' },
+  // Confirmado el 19 de junio de 2026: Estados Unidos 2 - 0 Australia.
+  match29: { t1: 2, t2: 0 },
+  // Confirmado el 19 de junio de 2026: Escocia 0 - 1 Marruecos.
+  match30: { t1: 0, t2: 1 },
   match31: { t1: '', t2: '' },
   match32: { t1: '', t2: '' },
 }
