@@ -61,6 +61,12 @@ export const MATCH_RESULTS: MatchResults = {
   match29: { t1: 2, t2: 0 },
   // Confirmado el 19 de junio de 2026: Escocia 0 - 1 Marruecos.
   match30: { t1: 0, t2: 1 },
-  match31: { t1: '', t2: '' },
-  match32: { t1: '', t2: '' },
+  // Confirmado el 19 de junio de 2026: Brasil 3 - 0 Haití.
+  match31: { t1: 3, t2: 0 },
+  // Confirmado el 19 de junio de 2026: Turquía 0 - 1 Paraguay.
+  match32: { t1: 0, t2: 1 },
+  match33: { t1: '', t2: '' },
+  match34: { t1: '', t2: '' },
+  match35: { t1: '', t2: '' },
+  match36: { t1: '', t2: '' },
 }
