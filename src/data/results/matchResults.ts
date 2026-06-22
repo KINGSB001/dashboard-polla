@@ -79,5 +79,6 @@ export const MATCH_RESULTS: MatchResults = {
   match38: { t1: 0, t2: 0 },
   // Confirmado el 21 de junio de 2026: Uruguay 2 - 2 Cabo Verde.
   match39: { t1: 2, t2: 2 },
-  match40: { t1: '', t2: '' },
+  // Confirmado el 21 de junio de 2026: Nueva Zelanda 1 - 3 Egipto.
+  match40: { t1: 1, t2: 3 },
 }
