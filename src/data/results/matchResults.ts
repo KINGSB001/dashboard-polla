@@ -73,8 +73,11 @@ export const MATCH_RESULTS: MatchResults = {
   match35: { t1: 0, t2: 0 },
   // Confirmado el 20 de junio de 2026: Túnez 0 - 4 Japón.
   match36: { t1: 0, t2: 4 },
-  match37: { t1: '', t2: '' },
-  match38: { t1: '', t2: '' },
-  match39: { t1: '', t2: '' },
+  // Confirmado el 21 de junio de 2026: España 4 - 0 Arabia Saudita.
+  match37: { t1: 4, t2: 0 },
+  // Confirmado el 21 de junio de 2026: Bélgica 0 - 0 Irán.
+  match38: { t1: 0, t2: 0 },
+  // Confirmado el 21 de junio de 2026: Uruguay 2 - 2 Cabo Verde.
+  match39: { t1: 2, t2: 2 },
   match40: { t1: '', t2: '' },
 }
