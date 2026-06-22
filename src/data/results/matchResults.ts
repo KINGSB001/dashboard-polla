@@ -81,4 +81,8 @@ export const MATCH_RESULTS: MatchResults = {
   match39: { t1: 2, t2: 2 },
   // Confirmado el 21 de junio de 2026: Nueva Zelanda 1 - 3 Egipto.
   match40: { t1: 1, t2: 3 },
+  match41: { t1: '', t2: '' },
+  match42: { t1: '', t2: '' },
+  match43: { t1: '', t2: '' },
+  match44: { t1: '', t2: '' },
 }

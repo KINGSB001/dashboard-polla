@@ -4,10 +4,15 @@ import { GROUP_STAGE_MATCHES } from './matches/groupStage'
 import { KNOCKOUT_STAGE_MATCHES } from './matches/knockoutStage'
 import { PARTICIPANTS_BATCH_01 } from './participants/batch-01'
 import { PARTICIPANTS_BATCH_02 } from './participants/batch-02'
+import { PARTICIPANTS_BATCH_03 } from './participants/batch-03'
 import { BONUS_RESULTS } from './results/bonusResults'
 import { MATCH_RESULTS } from './results/matchResults'
 
-export const PARTICIPANTS = [...PARTICIPANTS_BATCH_01, ...PARTICIPANTS_BATCH_02]
+export const PARTICIPANTS = [
+  ...PARTICIPANTS_BATCH_01,
+  ...PARTICIPANTS_BATCH_02,
+  ...PARTICIPANTS_BATCH_03,
+]
 
 export const MATCHES = [
   ...GROUP_STAGE_MATCHES,
