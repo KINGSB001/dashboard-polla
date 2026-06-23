@@ -110,6 +110,15 @@ export const GROUP_STAGE_EXTENDED_MATCHES: MatchConfig[] = [
     fecha: 'Lunes 22 de junio de 2026',
   },
   {
+    id: 'match47',
+    label: 'Portugal vs Uzbekistán - martes 23 de junio de 2026',
+    stage: 'fase_grupos',
+    type: 'match',
+    t1: 'Portugal',
+    t2: 'Uzbekistán',
+    fecha: 'Martes 23 de junio de 2026',
+  },
+  {
     id: 'match45',
     label: 'Inglaterra vs Ghana - martes 23 de junio de 2026',
     stage: 'fase_grupos',
@@ -125,15 +134,6 @@ export const GROUP_STAGE_EXTENDED_MATCHES: MatchConfig[] = [
     type: 'match',
     t1: 'Panamá',
     t2: 'Croacia',
-    fecha: 'Martes 23 de junio de 2026',
-  },
-  {
-    id: 'match47',
-    label: 'Portugal vs Uzbekistán - martes 23 de junio de 2026',
-    stage: 'fase_grupos',
-    type: 'match',
-    t1: 'Portugal',
-    t2: 'Uzbekistán',
     fecha: 'Martes 23 de junio de 2026',
   },
   {
