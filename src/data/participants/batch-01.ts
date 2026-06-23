@@ -51,6 +51,10 @@ export const PARTICIPANTS_BATCH_01: Participant[] = [
         match42: { t1: 3, t2: 0 },
         match43: { t1: 3, t2: 1 },
         match44: { t1: 0, t2: 2 },
+        match45: { t1: 3, t2: 0 },
+        match46: { t1: 0, t2: 3 },
+        match47: { t1: 2, t2: 0 },
+        match48: { t1: 2, t2: 1 },
       },
       bonos: {
         campeon: 'España',
@@ -113,6 +117,10 @@ export const PARTICIPANTS_BATCH_01: Participant[] = [
         match42: { t1: 3, t2: 0 },
         match43: { t1: 2, t2: 2 },
         match44: { t1: 1, t2: 1 },
+        match45: { t1: 3, t2: 1 },
+        match46: { t1: 0, t2: 3 },
+        match47: { t1: 2, t2: 0 },
+        match48: { t1: 2, t2: 1 },
       },
       bonos: {
         campeon: 'Francia',
@@ -175,6 +183,10 @@ export const PARTICIPANTS_BATCH_01: Participant[] = [
         match42: { t1: 4, t2: 0 },
         match43: { t1: 2, t2: 1 },
         match44: { t1: 0, t2: 3 },
+        match45: { t1: 3, t2: 1 },
+        match46: { t1: 1, t2: 2 },
+        match47: { t1: 4, t2: 0 },
+        match48: { t1: 2, t2: 1 },
       },
       bonos: {
         campeon: 'Argentina',
@@ -237,6 +249,10 @@ export const PARTICIPANTS_BATCH_01: Participant[] = [
         match42: { t1: 4, t2: 1 },
         match43: { t1: 3, t2: 1 },
         match44: { t1: 2, t2: 1 },
+        match45: { t1: 3, t2: 0 },
+        match46: { t1: 0, t2: 3 },
+        match47: { t1: 4, t2: 0 },
+        match48: { t1: 3, t2: 0 },
       },
       bonos: {
         campeon: 'España',

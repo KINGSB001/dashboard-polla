@@ -89,4 +89,8 @@ export const MATCH_RESULTS: MatchResults = {
   match43: { t1: 3, t2: 2 },
   // Confirmado el 22 de junio de 2026: Jordania 1 - 2 Argelia.
   match44: { t1: 1, t2: 2 },
+  match45: { t1: '', t2: '' },
+  match46: { t1: '', t2: '' },
+  match47: { t1: '', t2: '' },
+  match48: { t1: '', t2: '' },
 }
