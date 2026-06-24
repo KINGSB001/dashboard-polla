@@ -97,4 +97,10 @@ export const MATCH_RESULTS: MatchResults = {
   match47: { t1: 5, t2: 0 },
   // Confirmado el 23 de junio de 2026: Colombia 1 - 0 República Democrática del Congo.
   match48: { t1: 1, t2: 0 },
+  match49: { t1: '', t2: '' },
+  match50: { t1: '', t2: '' },
+  match51: { t1: '', t2: '' },
+  match52: { t1: '', t2: '' },
+  match53: { t1: '', t2: '' },
+  match54: { t1: '', t2: '' },
 }
