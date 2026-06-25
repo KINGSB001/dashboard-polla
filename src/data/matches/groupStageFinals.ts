@@ -1,0 +1,58 @@
+import type { MatchConfig } from '../../types/polla'
+
+export const GROUP_STAGE_FINALS_MATCHES: MatchConfig[] = [
+  {
+    id: 'match55',
+    label: 'Curazao vs Costa de Marfil - jueves 25 de junio de 2026',
+    stage: 'fase_grupos',
+    type: 'match',
+    t1: 'Curazao',
+    t2: 'Costa de Marfil',
+    fecha: 'Jueves 25 de junio de 2026',
+  },
+  {
+    id: 'match56',
+    label: 'Ecuador vs Alemania - jueves 25 de junio de 2026',
+    stage: 'fase_grupos',
+    type: 'match',
+    t1: 'Ecuador',
+    t2: 'Alemania',
+    fecha: 'Jueves 25 de junio de 2026',
+  },
+  {
+    id: 'match57',
+    label: 'Japón vs Suecia - jueves 25 de junio de 2026',
+    stage: 'fase_grupos',
+    type: 'match',
+    t1: 'Japón',
+    t2: 'Suecia',
+    fecha: 'Jueves 25 de junio de 2026',
+  },
+  {
+    id: 'match58',
+    label: 'Túnez vs Países Bajos - jueves 25 de junio de 2026',
+    stage: 'fase_grupos',
+    type: 'match',
+    t1: 'Túnez',
+    t2: 'Países Bajos',
+    fecha: 'Jueves 25 de junio de 2026',
+  },
+  {
+    id: 'match59',
+    label: 'Paraguay vs Australia - jueves 25 de junio de 2026',
+    stage: 'fase_grupos',
+    type: 'match',
+    t1: 'Paraguay',
+    t2: 'Australia',
+    fecha: 'Jueves 25 de junio de 2026',
+  },
+  {
+    id: 'match60',
+    label: 'Turquía vs Estados Unidos - jueves 25 de junio de 2026',
+    stage: 'fase_grupos',
+    type: 'match',
+    t1: 'Turquía',
+    t2: 'Estados Unidos',
+    fecha: 'Jueves 25 de junio de 2026',
+  },
+]

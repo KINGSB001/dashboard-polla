@@ -1,0 +1,19 @@
+import type { MatchPredictions } from '../../../types/polla'
+import { FORM_15_MATCH_PATCHES } from './form-15'
+
+type ParticipantMatchPatchMap = Partial<Record<number, MatchPredictions>>
+
+function mergePatchMaps(...patchMaps: ParticipantMatchPatchMap[]) {
+  return patchMaps.reduce<ParticipantMatchPatchMap>((merged, patchMap) => {
+    Object.entries(patchMap).forEach(([participantId, predictions]) => {
+      merged[Number(participantId)] = {
+        ...(merged[Number(participantId)] ?? {}),
+        ...predictions,
+      }
+    })
+
+    return merged
+  }, {})
+}
+
+export const PARTICIPANT_MATCH_PATCHES = mergePatchMaps(FORM_15_MATCH_PATCHES)
