@@ -97,10 +97,16 @@ export const MATCH_RESULTS: MatchResults = {
   match47: { t1: 5, t2: 0 },
   // Confirmado el 23 de junio de 2026: Colombia 1 - 0 República Democrática del Congo.
   match48: { t1: 1, t2: 0 },
-  match49: { t1: '', t2: '' },
-  match50: { t1: '', t2: '' },
-  match51: { t1: '', t2: '' },
-  match52: { t1: '', t2: '' },
-  match53: { t1: '', t2: '' },
-  match54: { t1: '', t2: '' },
+  // Confirmado el 24 de junio de 2026: Bosnia y Herzegovina 3 - 1 Qatar.
+  match49: { t1: 3, t2: 1 },
+  // Confirmado el 24 de junio de 2026: Suiza 2 - 1 Canadá.
+  match50: { t1: 2, t2: 1 },
+  // Confirmado el 24 de junio de 2026: Escocia 0 - 3 Brasil.
+  match51: { t1: 0, t2: 3 },
+  // Confirmado el 24 de junio de 2026: Marruecos 4 - 2 Haití.
+  match52: { t1: 4, t2: 2 },
+  // Confirmado el 24 de junio de 2026: República Checa 0 - 3 México.
+  match53: { t1: 0, t2: 3 },
+  // Confirmado el 24 de junio de 2026: Sudáfrica 1 - 0 Corea del Sur.
+  match54: { t1: 1, t2: 0 },
 }
