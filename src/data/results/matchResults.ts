@@ -109,4 +109,16 @@ export const MATCH_RESULTS: MatchResults = {
   match53: { t1: 0, t2: 3 },
   // Confirmado el 24 de junio de 2026: Sudáfrica 1 - 0 Corea del Sur.
   match54: { t1: 1, t2: 0 },
+  // Confirmado el 25 de junio de 2026: Curazao 0 - 2 Costa de Marfil.
+  match55: { t1: 0, t2: 2 },
+  // Confirmado el 25 de junio de 2026: Ecuador 2 - 1 Alemania.
+  match56: { t1: 2, t2: 1 },
+  // Confirmado el 25 de junio de 2026: Japón 1 - 1 Suecia.
+  match57: { t1: 1, t2: 1 },
+  // Confirmado el 25 de junio de 2026: Túnez 1 - 3 Países Bajos.
+  match58: { t1: 1, t2: 3 },
+  // Confirmado el 25 de junio de 2026: Paraguay 0 - 0 Australia.
+  match59: { t1: 0, t2: 0 },
+  // Confirmado el 25 de junio de 2026: Turquía 3 - 2 Estados Unidos.
+  match60: { t1: 3, t2: 2 },
 }
