@@ -121,4 +121,16 @@ export const MATCH_RESULTS: MatchResults = {
   match59: { t1: 0, t2: 0 },
   // Confirmado el 25 de junio de 2026: Turquía 3 - 2 Estados Unidos.
   match60: { t1: 3, t2: 2 },
+  // Confirmado el 26 de junio de 2026: Noruega 1 - 4 Francia.
+  match61: { t1: 1, t2: 4 },
+  // Confirmado el 26 de junio de 2026: Senegal 5 - 0 Irak.
+  match62: { t1: 5, t2: 0 },
+  // Confirmado el 26 de junio de 2026: Cabo Verde 0 - 0 Arabia Saudita.
+  match63: { t1: 0, t2: 0 },
+  // Confirmado el 26 de junio de 2026: Uruguay 0 - 1 España.
+  match64: { t1: 0, t2: 1 },
+  // Confirmado el 26 de junio de 2026: Egipto 1 - 1 Irán.
+  match65: { t1: 1, t2: 1 },
+  // Confirmado el 26 de junio de 2026: Nueva Zelanda 1 - 5 Bélgica.
+  match66: { t1: 1, t2: 5 },
 }
