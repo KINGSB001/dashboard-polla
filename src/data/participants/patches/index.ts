@@ -1,6 +1,7 @@
 import type { MatchPredictions } from '../../../types/polla'
 import { FORM_15_MATCH_PATCHES } from './form-15'
 import { FORM_16_MATCH_PATCHES } from './form-16'
+import { FORM_17_MATCH_PATCHES } from './form-17'
 
 type ParticipantMatchPatchMap = Partial<Record<number, MatchPredictions>>
 
@@ -20,4 +21,5 @@ function mergePatchMaps(...patchMaps: ParticipantMatchPatchMap[]) {
 export const PARTICIPANT_MATCH_PATCHES = mergePatchMaps(
   FORM_15_MATCH_PATCHES,
   FORM_16_MATCH_PATCHES,
+  FORM_17_MATCH_PATCHES,
 )
