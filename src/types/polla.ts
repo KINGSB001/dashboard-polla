@@ -15,11 +15,13 @@ export type MatchId = string
 export type MatchScore = {
   t1: number | ''
   t2: number | ''
+  clasificado?: string
 }
 
 export type MatchPrediction = {
   t1: number
   t2: number
+  clasificado?: string
 }
 
 export type MatchPredictions = Record<MatchId, MatchPrediction>

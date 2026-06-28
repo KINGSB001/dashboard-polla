@@ -30,10 +30,18 @@ function renderPrediction(user: LeaderboardEntry, selectedMatch: ScoreItem) {
     }
 
     return (
-      <div className="inline-flex items-center justify-center rounded-lg border border-slate-200 bg-slate-100 px-3 py-1.5 transition-colors group-hover:border-slate-300">
-        <span className="font-bold text-slate-700">{prediction.t1}</span>
-        <span className="mx-2 text-xs text-slate-400">-</span>
-        <span className="font-bold text-slate-700">{prediction.t2}</span>
+      <div className="flex flex-col items-center gap-1">
+        <div className="inline-flex items-center justify-center rounded-lg border border-slate-200 bg-slate-100 px-3 py-1.5 transition-colors group-hover:border-slate-300">
+          <span className="font-bold text-slate-700">{prediction.t1}</span>
+          <span className="mx-2 text-xs text-slate-400">-</span>
+          <span className="font-bold text-slate-700">{prediction.t2}</span>
+        </div>
+
+        {selectedMatch.stage === 'fase_eliminatoria' && prediction.clasificado ? (
+          <span className="text-xs font-semibold text-slate-500">
+            Clasifica: {prediction.clasificado}
+          </span>
+        ) : null}
       </div>
     )
   }

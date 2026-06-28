@@ -3,6 +3,7 @@ import type {
   BonusKey,
   BonusResults,
   LeaderboardEntry,
+  MatchConfig,
   MatchStage,
   MatchPrediction,
   MatchScore,
@@ -22,7 +23,7 @@ function normalizeText(value: string) {
 
 function isMatchResolved(
   result: MatchScore | undefined,
-): result is {
+): result is MatchScore & {
   t1: number
   t2: number
 } {
@@ -39,12 +40,32 @@ function getStageRule(stage: MatchStage) {
     : MATCH_POINT_RULES.fase_grupos
 }
 
+function getQualifiedTeamName(
+  score: MatchScore | MatchPrediction,
+  team1: string,
+  team2: string,
+) {
+  if (typeof score.clasificado === 'string' && score.clasificado.trim()) {
+    return score.clasificado
+  }
+
+  if (score.t1 > score.t2) {
+    return team1
+  }
+
+  if (score.t1 < score.t2) {
+    return team2
+  }
+
+  return undefined
+}
+
 export function calculateMatchPoints(
   prediction: MatchPrediction,
   result: MatchScore,
-  stage: MatchStage,
+  match: MatchConfig,
 ) {
-  const rules = getStageRule(stage)
+  const rules = getStageRule(match.stage)
 
   const rT1 = Number(result.t1)
   const rT2 = Number(result.t2)
@@ -55,6 +76,21 @@ export function calculateMatchPoints(
 
   if (prediction.t1 === rT1 && prediction.t2 === rT2) {
     return rules.marcadorExacto
+  }
+
+  if (match.stage === 'fase_eliminatoria') {
+    const predictedQualified = getQualifiedTeamName(prediction, match.t1, match.t2)
+    const actualQualified = getQualifiedTeamName(result, match.t1, match.t2)
+
+    if (
+      predictedQualified &&
+      actualQualified &&
+      normalizeText(predictedQualified) === normalizeText(actualQualified)
+    ) {
+      return rules.resultadoAcertado
+    }
+
+    return 0
   }
 
   const predDiff = prediction.t1 - prediction.t2
@@ -101,7 +137,13 @@ export function getScoreItemResultLabel(
       return 'Pendiente'
     }
 
-    return `${item.t1} ${result.t1} - ${result.t2} ${item.t2}`
+    const scoreLabel = `${item.t1} ${result.t1} - ${result.t2} ${item.t2}`
+
+    if (item.stage === 'fase_eliminatoria' && result.clasificado) {
+      return `${scoreLabel} | Clasifica: ${result.clasificado}`
+    }
+
+    return scoreLabel
   }
 
   const result = bonusResults[item.key]
@@ -138,7 +180,7 @@ export function buildLeaderboard(
             return
           }
 
-          const points = prediction ? calculateMatchPoints(prediction, result, item.stage) : 0
+          const points = prediction ? calculateMatchPoints(prediction, result, item) : 0
 
           totalPoints += points
           exactHits += points === getStageRule(item.stage).marcadorExacto ? 1 : 0
