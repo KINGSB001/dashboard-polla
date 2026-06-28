@@ -133,4 +133,16 @@ export const MATCH_RESULTS: MatchResults = {
   match65: { t1: 1, t2: 1 },
   // Confirmado el 26 de junio de 2026: Nueva Zelanda 1 - 5 Bélgica.
   match66: { t1: 1, t2: 5 },
+  // Confirmado el 27 de junio de 2026: Croacia 2 - 1 Ghana.
+  match67: { t1: 2, t2: 1 },
+  // Confirmado el 27 de junio de 2026: Panamá 0 - 2 Inglaterra.
+  match68: { t1: 0, t2: 2 },
+  // Confirmado el 27 de junio de 2026: Colombia 0 - 0 Portugal.
+  match69: { t1: 0, t2: 0 },
+  // Confirmado el 27 de junio de 2026: República Democrática del Congo 3 - 1 Uzbekistán.
+  match70: { t1: 3, t2: 1 },
+  // Confirmado el 27 de junio de 2026: Argelia 3 - 3 Austria.
+  match71: { t1: 3, t2: 3 },
+  // Confirmado el 27 de junio de 2026: Jordania 1 - 3 Argentina.
+  match72: { t1: 1, t2: 3 },
 }
