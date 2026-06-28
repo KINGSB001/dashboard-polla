@@ -60,6 +60,25 @@ function getQualifiedTeamName(
   return undefined
 }
 
+function isExactScoreHit(prediction: MatchPrediction, result: MatchScore) {
+  return prediction.t1 === Number(result.t1) && prediction.t2 === Number(result.t2)
+}
+
+function isQualifiedHit(
+  prediction: MatchPrediction,
+  result: MatchScore,
+  match: MatchConfig,
+) {
+  const predictedQualified = getQualifiedTeamName(prediction, match.t1, match.t2)
+  const actualQualified = getQualifiedTeamName(result, match.t1, match.t2)
+
+  return Boolean(
+    predictedQualified &&
+      actualQualified &&
+      normalizeText(predictedQualified) === normalizeText(actualQualified),
+  )
+}
+
 export function calculateMatchPoints(
   prediction: MatchPrediction,
   result: MatchScore,
@@ -74,23 +93,22 @@ export function calculateMatchPoints(
     return 0
   }
 
-  if (prediction.t1 === rT1 && prediction.t2 === rT2) {
-    return rules.marcadorExacto
-  }
-
   if (match.stage === 'fase_eliminatoria') {
-    const predictedQualified = getQualifiedTeamName(prediction, match.t1, match.t2)
-    const actualQualified = getQualifiedTeamName(result, match.t1, match.t2)
+    let points = 0
 
-    if (
-      predictedQualified &&
-      actualQualified &&
-      normalizeText(predictedQualified) === normalizeText(actualQualified)
-    ) {
-      return rules.resultadoAcertado
+    if (isExactScoreHit(prediction, result)) {
+      points += rules.marcadorExacto
     }
 
-    return 0
+    if (isQualifiedHit(prediction, result, match)) {
+      points += rules.resultadoAcertado
+    }
+
+    return points
+  }
+
+  if (isExactScoreHit(prediction, result)) {
+    return rules.marcadorExacto
   }
 
   const predDiff = prediction.t1 - prediction.t2
@@ -181,13 +199,17 @@ export function buildLeaderboard(
           }
 
           const points = prediction ? calculateMatchPoints(prediction, result, item) : 0
+          const exactScoreHit = prediction ? isExactScoreHit(prediction, result) : false
+          const partialHit =
+            prediction && !exactScoreHit
+              ? item.stage === 'fase_eliminatoria'
+                ? isQualifiedHit(prediction, result, item)
+                : points === getStageRule(item.stage).resultadoAcertado
+              : false
 
           totalPoints += points
-          exactHits += points === getStageRule(item.stage).marcadorExacto ? 1 : 0
-          outcomeHits +=
-            points === getStageRule(item.stage).resultadoAcertado
-              ? 1
-              : 0
+          exactHits += exactScoreHit ? 1 : 0
+          outcomeHits += partialHit ? 1 : 0
 
           if (item.id === selectedItemId) {
             selectedItemPoints = points
