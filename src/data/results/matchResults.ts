@@ -147,4 +147,6 @@ export const MATCH_RESULTS: MatchResults = {
   match72: { t1: 1, t2: 3 },
   // Confirmado el 28 de junio de 2026: Sudáfrica 0 - 1 Canadá. Clasifica Canadá.
   match73: { t1: 0, t2: 1, clasificado: 'Canadá' },
+  // Confirmado el 29 de junio de 2026: Brasil 2 - 1 Japón. Clasifica Brasil.
+  match74: { t1: 2, t2: 1, clasificado: 'Brasil' },
 }
