@@ -145,4 +145,6 @@ export const MATCH_RESULTS: MatchResults = {
   match71: { t1: 3, t2: 3 },
   // Confirmado el 27 de junio de 2026: Jordania 1 - 3 Argentina.
   match72: { t1: 1, t2: 3 },
+  // Confirmado el 28 de junio de 2026: Sudáfrica 0 - 1 Canadá. Clasifica Canadá.
+  match73: { t1: 0, t2: 1, clasificado: 'Canadá' },
 }
