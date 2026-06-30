@@ -33,7 +33,7 @@ export const FORM_21_MATCH_PATCHES: Partial<Record<number, MatchPredictions>> = 
   },
   7: {
     match77: { t1: 1, t2: 2, clasificado: 'Noruega' },
-    match78: { t1: 2, t2: 9, clasificado: 'Francia' },
+    match78: { t1: 2, t2: 0, clasificado: 'Francia' },
     match79: { t1: 1, t2: 1, clasificado: 'México' },
   },
   8: {
