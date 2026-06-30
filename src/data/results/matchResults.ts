@@ -149,4 +149,8 @@ export const MATCH_RESULTS: MatchResults = {
   match73: { t1: 0, t2: 1, clasificado: 'Canadá' },
   // Confirmado el 29 de junio de 2026: Brasil 2 - 1 Japón. Clasifica Brasil.
   match74: { t1: 2, t2: 1, clasificado: 'Brasil' },
+  // Confirmado el 29 de junio de 2026: Alemania 1 - 1 Paraguay. Clasifica Paraguay.
+  match75: { t1: 1, t2: 1, clasificado: 'Paraguay' },
+  // Confirmado el 29 de junio de 2026: Países Bajos 1 - 1 Marruecos. Clasifica Marruecos.
+  match76: { t1: 1, t2: 1, clasificado: 'Marruecos' },
 }
