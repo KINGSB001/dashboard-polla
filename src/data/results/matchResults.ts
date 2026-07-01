@@ -159,4 +159,6 @@ export const MATCH_RESULTS: MatchResults = {
   match78: { t1: 3, t2: 0, clasificado: 'Francia' },
   // Confirmado el 30 de junio de 2026: México 2 - 0 Ecuador. Clasifica México.
   match79: { t1: 2, t2: 0, clasificado: 'México' },
+  // Confirmado el 1 de julio de 2026: Inglaterra 2 - 1 República Democrática del Congo. Clasifica Inglaterra.
+  match80: { t1: 2, t2: 1, clasificado: 'Inglaterra' },
 }
