@@ -155,4 +155,6 @@ export const MATCH_RESULTS: MatchResults = {
   match76: { t1: 1, t2: 1, clasificado: 'Marruecos' },
   // Confirmado el 30 de junio de 2026: Costa de Marfil 1 - 2 Noruega. Clasifica Noruega.
   match77: { t1: 1, t2: 2, clasificado: 'Noruega' },
+  // Confirmado el 30 de junio de 2026: Francia 3 - 0 Suecia. Clasifica Francia.
+  match78: { t1: 3, t2: 0, clasificado: 'Francia' },
 }
