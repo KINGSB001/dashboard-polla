@@ -6,6 +6,7 @@ import { FORM_19_MATCH_PATCHES } from './form-19'
 import { FORM_20_MATCH_PATCHES } from './form-20'
 import { FORM_21_MATCH_PATCHES } from './form-21'
 import { FORM_22_MATCH_PATCHES } from './form-22'
+import { FORM_23_MATCH_PATCHES } from './form-23'
 
 type ParticipantMatchPatchMap = Partial<Record<number, MatchPredictions>>
 
@@ -30,4 +31,5 @@ export const PARTICIPANT_MATCH_PATCHES = mergePatchMaps(
   FORM_20_MATCH_PATCHES,
   FORM_21_MATCH_PATCHES,
   FORM_22_MATCH_PATCHES,
+  FORM_23_MATCH_PATCHES,
 )
