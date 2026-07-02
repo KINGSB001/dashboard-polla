@@ -161,4 +161,8 @@ export const MATCH_RESULTS: MatchResults = {
   match79: { t1: 2, t2: 0, clasificado: 'México' },
   // Confirmado el 1 de julio de 2026: Inglaterra 2 - 1 República Democrática del Congo. Clasifica Inglaterra.
   match80: { t1: 2, t2: 1, clasificado: 'Inglaterra' },
+  // Confirmado el 1 de julio de 2026: Bélgica 3 - 2 Senegal. Clasifica Bélgica.
+  match81: { t1: 3, t2: 2, clasificado: 'Bélgica' },
+  // Confirmado el 1 de julio de 2026: Estados Unidos 2 - 0 Bosnia y Herzegovina. Clasifica Estados Unidos.
+  match82: { t1: 2, t2: 0, clasificado: 'Estados Unidos' },
 }
