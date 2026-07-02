@@ -165,4 +165,6 @@ export const MATCH_RESULTS: MatchResults = {
   match81: { t1: 3, t2: 2, clasificado: 'Bélgica' },
   // Confirmado el 1 de julio de 2026: Estados Unidos 2 - 0 Bosnia y Herzegovina. Clasifica Estados Unidos.
   match82: { t1: 2, t2: 0, clasificado: 'Estados Unidos' },
+  // Confirmado el 2 de julio de 2026: España 3 - 0 Austria. Clasifica España.
+  match83: { t1: 3, t2: 0, clasificado: 'España' },
 }
