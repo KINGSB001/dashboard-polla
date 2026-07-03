@@ -167,4 +167,8 @@ export const MATCH_RESULTS: MatchResults = {
   match82: { t1: 2, t2: 0, clasificado: 'Estados Unidos' },
   // Confirmado el 2 de julio de 2026: España 3 - 0 Austria. Clasifica España.
   match83: { t1: 3, t2: 0, clasificado: 'España' },
+  // Confirmado el 2 de julio de 2026: Portugal 2 - 1 Croacia. Clasifica Portugal.
+  match84: { t1: 2, t2: 1, clasificado: 'Portugal' },
+  // Confirmado el 2 de julio de 2026: Suiza 2 - 0 Argelia. Clasifica Suiza.
+  match85: { t1: 2, t2: 0, clasificado: 'Suiza' },
 }
