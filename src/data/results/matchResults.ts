@@ -171,4 +171,10 @@ export const MATCH_RESULTS: MatchResults = {
   match84: { t1: 2, t2: 1, clasificado: 'Portugal' },
   // Confirmado el 2 de julio de 2026: Suiza 2 - 0 Argelia. Clasifica Suiza.
   match85: { t1: 2, t2: 0, clasificado: 'Suiza' },
+  // Confirmado el 3 de julio de 2026: Australia 1 - 1 Egipto. Clasifica Egipto.
+  match86: { t1: 1, t2: 1, clasificado: 'Egipto' },
+  // Confirmado el 3 de julio de 2026: Argentina 3 - 2 Cabo Verde. Clasifica Argentina.
+  match87: { t1: 3, t2: 2, clasificado: 'Argentina' },
+  // Confirmado el 3 de julio de 2026: Colombia 1 - 0 Ghana. Clasifica Colombia.
+  match88: { t1: 1, t2: 0, clasificado: 'Colombia' },
 }

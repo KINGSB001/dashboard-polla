@@ -145,4 +145,22 @@ export const KNOCKOUT_STAGE_MATCHES: MatchConfig[] = [
     t2: 'Ghana',
     fecha: 'Viernes 3 de julio de 2026',
   },
+  {
+    id: 'match89',
+    label: 'Canadá vs Marruecos - sábado 4 de julio de 2026',
+    stage: 'fase_eliminatoria',
+    type: 'match',
+    t1: 'Canadá',
+    t2: 'Marruecos',
+    fecha: 'Sábado 4 de julio de 2026',
+  },
+  {
+    id: 'match90',
+    label: 'Paraguay vs Francia - sábado 4 de julio de 2026',
+    stage: 'fase_eliminatoria',
+    type: 'match',
+    t1: 'Paraguay',
+    t2: 'Francia',
+    fecha: 'Sábado 4 de julio de 2026',
+  },
 ]
