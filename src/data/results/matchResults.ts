@@ -177,4 +177,8 @@ export const MATCH_RESULTS: MatchResults = {
   match87: { t1: 3, t2: 2, clasificado: 'Argentina' },
   // Confirmado el 3 de julio de 2026: Colombia 1 - 0 Ghana. Clasifica Colombia.
   match88: { t1: 1, t2: 0, clasificado: 'Colombia' },
+  // Confirmado el 4 de julio de 2026: Canadá 0 - 3 Marruecos. Clasifica Marruecos.
+  match89: { t1: 0, t2: 3, clasificado: 'Marruecos' },
+  // Confirmado el 4 de julio de 2026: Paraguay 0 - 1 Francia. Clasifica Francia.
+  match90: { t1: 0, t2: 1, clasificado: 'Francia' },
 }
