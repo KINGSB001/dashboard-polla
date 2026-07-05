@@ -163,4 +163,22 @@ export const KNOCKOUT_STAGE_MATCHES: MatchConfig[] = [
     t2: 'Francia',
     fecha: 'Sábado 4 de julio de 2026',
   },
+  {
+    id: 'match91',
+    label: 'Brasil vs Noruega - domingo 5 de julio de 2026',
+    stage: 'fase_eliminatoria',
+    type: 'match',
+    t1: 'Brasil',
+    t2: 'Noruega',
+    fecha: 'Domingo 5 de julio de 2026',
+  },
+  {
+    id: 'match92',
+    label: 'México vs Inglaterra - domingo 5 de julio de 2026',
+    stage: 'fase_eliminatoria',
+    type: 'match',
+    t1: 'México',
+    t2: 'Inglaterra',
+    fecha: 'Domingo 5 de julio de 2026',
+  },
 ]
