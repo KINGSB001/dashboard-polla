@@ -181,4 +181,8 @@ export const MATCH_RESULTS: MatchResults = {
   match89: { t1: 0, t2: 3, clasificado: 'Marruecos' },
   // Confirmado el 4 de julio de 2026: Paraguay 0 - 1 Francia. Clasifica Francia.
   match90: { t1: 0, t2: 1, clasificado: 'Francia' },
+  // Confirmado el 5 de julio de 2026: Brasil 1 - 2 Noruega. Clasifica Noruega.
+  match91: { t1: 1, t2: 2, clasificado: 'Noruega' },
+  // Confirmado el 5 de julio de 2026: México 2 - 3 Inglaterra. Clasifica Inglaterra.
+  match92: { t1: 2, t2: 3, clasificado: 'Inglaterra' },
 }
