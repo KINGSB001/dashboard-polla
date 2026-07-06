@@ -181,4 +181,22 @@ export const KNOCKOUT_STAGE_MATCHES: MatchConfig[] = [
     t2: 'Inglaterra',
     fecha: 'Domingo 5 de julio de 2026',
   },
+  {
+    id: 'match93',
+    label: 'Portugal vs España - lunes 6 de julio de 2026',
+    stage: 'fase_eliminatoria',
+    type: 'match',
+    t1: 'Portugal',
+    t2: 'España',
+    fecha: 'Lunes 6 de julio de 2026',
+  },
+  {
+    id: 'match94',
+    label: 'Estados Unidos vs Bélgica - lunes 6 de julio de 2026',
+    stage: 'fase_eliminatoria',
+    type: 'match',
+    t1: 'Estados Unidos',
+    t2: 'Bélgica',
+    fecha: 'Lunes 6 de julio de 2026',
+  },
 ]
