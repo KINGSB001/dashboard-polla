@@ -185,4 +185,8 @@ export const MATCH_RESULTS: MatchResults = {
   match91: { t1: 1, t2: 2, clasificado: 'Noruega' },
   // Confirmado el 5 de julio de 2026: México 2 - 3 Inglaterra. Clasifica Inglaterra.
   match92: { t1: 2, t2: 3, clasificado: 'Inglaterra' },
+  // Confirmado el 6 de julio de 2026: Portugal 0 - 1 España. Clasifica España.
+  match93: { t1: 0, t2: 1, clasificado: 'España' },
+  // Confirmado el 6 de julio de 2026: Estados Unidos 1 - 4 Bélgica. Clasifica Bélgica.
+  match94: { t1: 1, t2: 4, clasificado: 'Bélgica' },
 }

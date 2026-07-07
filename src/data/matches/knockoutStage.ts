@@ -199,4 +199,22 @@ export const KNOCKOUT_STAGE_MATCHES: MatchConfig[] = [
     t2: 'Bélgica',
     fecha: 'Lunes 6 de julio de 2026',
   },
+  {
+    id: 'match95',
+    label: 'Argentina vs Egipto - martes 7 de julio de 2026',
+    stage: 'fase_eliminatoria',
+    type: 'match',
+    t1: 'Argentina',
+    t2: 'Egipto',
+    fecha: 'Martes 7 de julio de 2026',
+  },
+  {
+    id: 'match96',
+    label: 'Suiza vs Colombia - martes 7 de julio de 2026',
+    stage: 'fase_eliminatoria',
+    type: 'match',
+    t1: 'Suiza',
+    t2: 'Colombia',
+    fecha: 'Martes 7 de julio de 2026',
+  },
 ]
