@@ -6,19 +6,19 @@ export const FORM_27_MATCH_PATCHES: Partial<Record<number, MatchPredictions>> = 
     match94: { t1: 2, t2: 1, clasificado: 'Estados Unidos' },
   },
   2: {
-    match93: { t1: 2, t2: 2, clasificado: 'España' },
-    match94: { t1: 3, t2: 1, clasificado: 'Estados Unidos' },
-  },
-  3: {
     match93: { t1: 1, t2: 1, clasificado: 'España' },
     match94: { t1: 2, t2: 1, clasificado: 'Estados Unidos' },
   },
-  4: {
+  3: {
     match93: { t1: 1, t2: 2, clasificado: 'España' },
-    match94: { t1: 3, t2: 2, clasificado: 'Estados Unidos' },
+    match94: { t1: 2, t2: 1, clasificado: 'Estados Unidos' },
+  },
+  4: {
+    match93: { t1: 2, t2: 2, clasificado: 'España' },
+    match94: { t1: 3, t2: 1, clasificado: 'Estados Unidos' },
   },
   5: {
-    match93: { t1: 2, t2: 1, clasificado: 'Portugal' },
+    match93: { t1: 1, t2: 2, clasificado: 'España' },
     match94: { t1: 1, t2: 1, clasificado: 'Estados Unidos' },
   },
   6: {
@@ -26,19 +26,19 @@ export const FORM_27_MATCH_PATCHES: Partial<Record<number, MatchPredictions>> = 
     match94: { t1: 2, t2: 1, clasificado: 'Estados Unidos' },
   },
   7: {
-    match93: { t1: 1, t2: 2, clasificado: 'España' },
+    match93: { t1: 2, t2: 1, clasificado: 'Portugal' },
     match94: { t1: 1, t2: 1, clasificado: 'Estados Unidos' },
   },
   8: {
     match93: { t1: 1, t2: 2, clasificado: 'España' },
-    match94: { t1: 2, t2: 1, clasificado: 'Estados Unidos' },
+    match94: { t1: 3, t2: 2, clasificado: 'Estados Unidos' },
   },
   9: {
-    match93: { t1: 2, t2: 1, clasificado: 'Portugal' },
-    match94: { t1: 3, t2: 1, clasificado: 'Estados Unidos' },
-  },
-  10: {
     match93: { t1: 2, t2: 2, clasificado: 'España' },
     match94: { t1: 2, t2: 3, clasificado: 'Bélgica' },
+  },
+  10: {
+    match93: { t1: 2, t2: 1, clasificado: 'Portugal' },
+    match94: { t1: 3, t2: 1, clasificado: 'Estados Unidos' },
   },
 }
