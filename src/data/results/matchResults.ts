@@ -189,4 +189,8 @@ export const MATCH_RESULTS: MatchResults = {
   match93: { t1: 0, t2: 1, clasificado: 'España' },
   // Confirmado el 6 de julio de 2026: Estados Unidos 1 - 4 Bélgica. Clasifica Bélgica.
   match94: { t1: 1, t2: 4, clasificado: 'Bélgica' },
+  // Confirmado el 7 de julio de 2026: Argentina 3 - 2 Egipto. Clasifica Argentina.
+  match95: { t1: 3, t2: 2, clasificado: 'Argentina' },
+  // Confirmado el 7 de julio de 2026: Suiza 0 - 0 Colombia. Clasifica Suiza.
+  match96: { t1: 0, t2: 0, clasificado: 'Suiza' },
 }
