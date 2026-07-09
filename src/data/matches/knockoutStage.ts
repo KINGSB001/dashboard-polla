@@ -217,4 +217,13 @@ export const KNOCKOUT_STAGE_MATCHES: MatchConfig[] = [
     t2: 'Colombia',
     fecha: 'Martes 7 de julio de 2026',
   },
+  {
+    id: 'match97',
+    label: 'Francia vs Marruecos - jueves 9 de julio de 2026',
+    stage: 'fase_eliminatoria',
+    type: 'match',
+    t1: 'Francia',
+    t2: 'Marruecos',
+    fecha: 'Jueves 9 de julio de 2026',
+  },
 ]
