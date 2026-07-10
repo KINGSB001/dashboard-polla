@@ -226,4 +226,13 @@ export const KNOCKOUT_STAGE_MATCHES: MatchConfig[] = [
     t2: 'Marruecos',
     fecha: 'Jueves 9 de julio de 2026',
   },
+  {
+    id: 'match98',
+    label: 'España vs Bélgica - viernes 10 de julio de 2026',
+    stage: 'fase_eliminatoria',
+    type: 'match',
+    t1: 'España',
+    t2: 'Bélgica',
+    fecha: 'Viernes 10 de julio de 2026',
+  },
 ]
