@@ -235,4 +235,22 @@ export const KNOCKOUT_STAGE_MATCHES: MatchConfig[] = [
     t2: 'Bélgica',
     fecha: 'Viernes 10 de julio de 2026',
   },
+  {
+    id: 'match99',
+    label: 'Noruega vs Inglaterra - sábado 11 de julio de 2026',
+    stage: 'fase_eliminatoria',
+    type: 'match',
+    t1: 'Noruega',
+    t2: 'Inglaterra',
+    fecha: 'Sábado 11 de julio de 2026',
+  },
+  {
+    id: 'match100',
+    label: 'Argentina vs Suiza - sábado 11 de julio de 2026',
+    stage: 'fase_eliminatoria',
+    type: 'match',
+    t1: 'Argentina',
+    t2: 'Suiza',
+    fecha: 'Sábado 11 de julio de 2026',
+  },
 ]
