@@ -3,7 +3,7 @@ import type { BonusKey, StageFilter } from '../types/polla'
 export const DASHBOARD_META = {
   titulo: 'Polla Mundialista 2026',
   subtitulo: 'Dashboard de predicciones, resultados y puntajes',
-  ultimaActualizacion: '10 de julio de 2026',
+  ultimaActualizacion: '11 de julio de 2026',
 } as const
 
 export const MATCH_POINT_RULES = {
