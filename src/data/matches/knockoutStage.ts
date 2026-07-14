@@ -253,4 +253,13 @@ export const KNOCKOUT_STAGE_MATCHES: MatchConfig[] = [
     t2: 'Suiza',
     fecha: 'Sábado 11 de julio de 2026',
   },
+  {
+    id: 'match101',
+    label: 'Francia vs España - martes 14 de julio de 2026',
+    stage: 'fase_eliminatoria',
+    type: 'match',
+    t1: 'Francia',
+    t2: 'España',
+    fecha: 'Martes 14 de julio de 2026',
+  },
 ]
