@@ -9,5 +9,6 @@ export const FORM_32_MATCH_PATCHES: Partial<Record<number, MatchPredictions>> = 
   6: { match101: { t1: 2, t2: 1, clasificado: 'Francia' } },
   7: { match101: { t1: 1, t2: 1, clasificado: 'España' } },
   8: { match101: { t1: 2, t2: 3, clasificado: 'España' } },
+  9: { match101: { t1: 1, t2: 0, clasificado: 'España' } },
   10: { match101: { t1: 1, t2: 2, clasificado: 'España' } },
 }
