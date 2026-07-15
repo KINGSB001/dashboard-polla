@@ -262,4 +262,13 @@ export const KNOCKOUT_STAGE_MATCHES: MatchConfig[] = [
     t2: 'España',
     fecha: 'Martes 14 de julio de 2026',
   },
+  {
+    id: 'match102',
+    label: 'Argentina vs Inglaterra - miércoles 15 de julio de 2026',
+    stage: 'fase_eliminatoria',
+    type: 'match',
+    t1: 'Argentina',
+    t2: 'Inglaterra',
+    fecha: 'Miércoles 15 de julio de 2026',
+  },
 ]
