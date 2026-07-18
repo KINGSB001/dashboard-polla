@@ -271,4 +271,13 @@ export const KNOCKOUT_STAGE_MATCHES: MatchConfig[] = [
     t2: 'Inglaterra',
     fecha: 'Miércoles 15 de julio de 2026',
   },
+  {
+    id: 'match103',
+    label: 'Francia vs Inglaterra - sábado 18 de julio de 2026',
+    stage: 'fase_eliminatoria',
+    type: 'match',
+    t1: 'Francia',
+    t2: 'Inglaterra',
+    fecha: 'Sábado 18 de julio de 2026',
+  },
 ]
