@@ -280,4 +280,13 @@ export const KNOCKOUT_STAGE_MATCHES: MatchConfig[] = [
     t2: 'Inglaterra',
     fecha: 'Sábado 18 de julio de 2026',
   },
+  {
+    id: 'match104',
+    label: 'Argentina vs España - domingo 19 de julio de 2026',
+    stage: 'fase_eliminatoria',
+    type: 'match',
+    t1: 'Argentina',
+    t2: 'España',
+    fecha: 'Domingo 19 de julio de 2026',
+  },
 ]
