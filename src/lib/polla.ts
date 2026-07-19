@@ -30,8 +30,16 @@ function isMatchResolved(
   return typeof result?.t1 === 'number' && typeof result.t2 === 'number'
 }
 
+function getBonusResultOptions(result: string | undefined) {
+  // A pipe separates teams tied for the same bonus.
+  return result
+    ?.split('|')
+    .map(normalizeText)
+    .filter(Boolean) ?? []
+}
+
 function isBonusResolved(result: string | undefined) {
-  return Boolean(result && result.trim())
+  return getBonusResultOptions(result).length > 0
 }
 
 function getStageRule(stage: MatchStage) {
@@ -136,7 +144,7 @@ function calculateBonusPoints(
     return 0
   }
 
-  return normalizeText(prediction) === normalizeText(result) ? points : 0
+  return getBonusResultOptions(result).includes(normalizeText(prediction)) ? points : 0
 }
 
 export function getScoreItemResultLabel(
@@ -165,7 +173,7 @@ export function getScoreItemResultLabel(
   }
 
   const result = bonusResults[item.key]
-  return isBonusResolved(result) ? result ?? '' : 'Pendiente'
+  return isBonusResolved(result) ? result?.replaceAll('|', ' / ') ?? '' : 'Pendiente'
 }
 
 export function buildLeaderboard(

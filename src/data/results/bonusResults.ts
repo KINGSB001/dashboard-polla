@@ -1,11 +1,11 @@
 import type { BonusResults } from '../../types/polla'
 
 export const BONUS_RESULTS: BonusResults = {
-  campeon: '',
-  subcampeon: '',
-  tercer: '',
-  cuarto: '',
-  goleador: '',
-  eq_goleador: '',
-  valla_vencida: '',
+  campeon: 'España',
+  subcampeon: 'Argentina',
+  tercer: 'Inglaterra',
+  cuarto: 'Francia',
+  goleador: 'Kylian Mbappé',
+  eq_goleador: 'Francia|Inglaterra',
+  valla_vencida: 'Túnez|Irak',
 }

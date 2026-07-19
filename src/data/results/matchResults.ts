@@ -207,4 +207,6 @@ export const MATCH_RESULTS: MatchResults = {
   match102: { t1: 2, t2: 1, clasificado: 'Argentina' },
   // Confirmado el 18 de julio de 2026: Francia 4 - 6 Inglaterra. Clasifica Inglaterra.
   match103: { t1: 4, t2: 6, clasificado: 'Inglaterra' },
+  // Confirmado el 19 de julio de 2026: Argentina 0 - 1 España. Clasifica España.
+  match104: { t1: 0, t2: 1, clasificado: 'España' },
 }
