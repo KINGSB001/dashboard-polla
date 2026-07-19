@@ -7,5 +7,5 @@ export const BONUS_RESULTS: BonusResults = {
   cuarto: 'Francia',
   goleador: 'Kylian Mbappé',
   eq_goleador: 'Francia|Inglaterra',
-  valla_vencida: 'Túnez|Irak',
+  valla_vencida: 'Túnez|Irak|Inglaterra',
 }
